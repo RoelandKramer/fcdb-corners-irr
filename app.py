@@ -17,10 +17,12 @@ from __future__ import annotations
 
 import base64
 import json
+import time
 from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+import requests
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -48,6 +50,22 @@ try:
     VIDEO_BASE_URL = st.secrets.get("VIDEO_BASE_URL", "")
 except Exception:
     VIDEO_BASE_URL = ""
+
+# Persistente label-opslag via een private GitHub Gist.
+#   GIST_TOKEN = "ghp_..."  — PAT met scope `gist`
+#   GIST_ID    = "abc123…"  — id van een bestaande private gist
+# Beide via st.secrets (Streamlit Cloud). Leeg = alleen lokale CSV (Streamlit
+# Cloud container is niet persistent, dus zet dit aan voor de live deploy).
+try:
+    GIST_TOKEN = st.secrets.get("GIST_TOKEN", "")
+    GIST_ID    = st.secrets.get("GIST_ID", "")
+except Exception:
+    GIST_TOKEN = ""
+    GIST_ID    = ""
+
+GIST_ENABLED       = bool(GIST_TOKEN and GIST_ID)
+GIST_SYNC_INTERVAL = 8     # min. seconden tussen automatische sync-pogingen
+GIST_API_URL       = "https://api.github.com"
 
 PASSWORD = "denbosch2026"
 
@@ -155,8 +173,69 @@ def user_csv_path(username: str) -> Path:
     return LABELS_DIR / f"labels_{username}.csv"
 
 
+# ---- Gist persistence helpers --------------------------------------------
+def _gist_filename(username: str) -> str:
+    return f"labels_{username}.csv"
+
+
+def _gist_fetch_csv(username: str) -> str | None:
+    """Fetch a single file's content from the labels gist. None on failure."""
+    if not GIST_ENABLED:
+        return None
+    try:
+        r = requests.get(
+            f"{GIST_API_URL}/gists/{GIST_ID}",
+            headers={
+                "Authorization": f"token {GIST_TOKEN}",
+                "Accept":        "application/vnd.github+json",
+            },
+            timeout=15,
+        )
+        r.raise_for_status()
+        files = r.json().get("files", {})
+        f = files.get(_gist_filename(username))
+        if not f:
+            return None
+        # Bij grote bestanden zet GitHub "truncated": True en biedt raw_url.
+        if f.get("truncated") and f.get("raw_url"):
+            rr = requests.get(f["raw_url"], timeout=15)
+            rr.raise_for_status()
+            return rr.text
+        return f.get("content")
+    except Exception as e:
+        st.warning(f"Kon labels niet ophalen uit gist: {e}")
+        return None
+
+
+def _gist_push_csv(username: str, csv_text: str) -> bool:
+    """Update one file in the labels gist. Returns True on success."""
+    if not GIST_ENABLED:
+        return False
+    try:
+        r = requests.patch(
+            f"{GIST_API_URL}/gists/{GIST_ID}",
+            headers={
+                "Authorization": f"token {GIST_TOKEN}",
+                "Accept":        "application/vnd.github+json",
+            },
+            json={"files": {_gist_filename(username): {"content": csv_text}}},
+            timeout=15,
+        )
+        r.raise_for_status()
+        return True
+    except Exception:
+        return False
+
+
 def load_user_labels(username: str) -> dict:
+    """Load labels from the gist (authoritative on Streamlit Cloud), falling
+    back to the local CSV. Local CSV gets refreshed when the gist has data so
+    subsequent saves can diff cheaply."""
     p = user_csv_path(username)
+    if GIST_ENABLED:
+        csv_text = _gist_fetch_csv(username)
+        if csv_text:
+            p.write_text(csv_text, encoding="utf-8")
     if not p.exists():
         return {}
     df = pd.read_csv(p)
@@ -170,7 +249,7 @@ def load_user_labels(username: str) -> dict:
     return out
 
 
-def save_user_labels(username: str, labels: dict, manifest: dict) -> None:
+def _labels_to_csv_text(username: str, labels: dict, manifest: dict) -> str:
     by_corner = {c["id"]: c for c in manifest["corners"]}
     rows = []
     for (cid, team, jersey), v in labels.items():
@@ -189,7 +268,39 @@ def save_user_labels(username: str, labels: dict, manifest: dict) -> None:
             "marks":         v.get("marks"),
             "saved_at":      datetime.utcnow().isoformat(),
         })
-    pd.DataFrame(rows).to_csv(user_csv_path(username), index=False)
+    return pd.DataFrame(rows).to_csv(index=False)
+
+
+def save_user_labels(username: str, labels: dict, manifest: dict,
+                     force_remote: bool = False) -> None:
+    """Save labels to local CSV (always) and to the gist (throttled, unless
+    ``force_remote`` is True). Throttling avoids hammering the GitHub API on
+    every selectbox change."""
+    csv_text = _labels_to_csv_text(username, labels, manifest)
+    user_csv_path(username).write_text(csv_text, encoding="utf-8")
+
+    if not GIST_ENABLED:
+        return
+
+    now      = time.time()
+    last     = float(st.session_state.get("_gist_last_save_ts", 0))
+    last_txt = st.session_state.get("_gist_last_save_text", "")
+
+    # Niets te uploaden als er niks veranderd is sinds vorige sync
+    if not force_remote and csv_text == last_txt:
+        return
+    # Anders: pas pushen als de cooldown voorbij is, of als force_remote
+    if not force_remote and (now - last) < GIST_SYNC_INTERVAL:
+        st.session_state["_gist_dirty"] = True
+        return
+
+    ok = _gist_push_csv(username, csv_text)
+    if ok:
+        st.session_state["_gist_last_save_ts"]   = now
+        st.session_state["_gist_last_save_text"] = csv_text
+        st.session_state["_gist_dirty"]          = False
+    else:
+        st.session_state["_gist_dirty"] = True
 
 
 # ---------------------------------------------------------------------------
@@ -534,18 +645,23 @@ def corner_page(manifest: dict):
         role_form_fragment(corner, corner_idx, username, manifest)
 
     # Navigatie (volledige rerun bij klik — gewenst, want we gaan naar een
-    # nieuwe corner)
+    # nieuwe corner). Op deze "definitieve" momenten forceren we ook een
+    # remote sync zodat we zeker weten dat de gist up-to-date is.
     st.markdown("---")
     nav_prev, nav_mid, nav_next = st.columns([1, 1, 1])
     with nav_prev:
         if cursor > 0:
             if st.button("← Vorige", use_container_width=True):
+                save_user_labels(username, st.session_state.labels,
+                                  manifest, force_remote=True)
                 st.session_state.cursor -= 1
                 st.rerun()
     with nav_mid:
         st.caption(f"Corner {cursor + 1} / {len(queue)}")
     with nav_next:
         if st.button("Volgende →", type="primary", use_container_width=True):
+            save_user_labels(username, st.session_state.labels,
+                              manifest, force_remote=True)
             st.session_state.cursor += 1
             st.rerun()
 
@@ -556,7 +672,8 @@ def corner_page(manifest: dict):
 def done_page(username: str, manifest: dict):
     st.title("Helemaal klaar! 🎉")
     st.write(f"Bedankt, **{username}** — je labels zijn opgeslagen.")
-    save_user_labels(username, st.session_state.labels, manifest)
+    save_user_labels(username, st.session_state.labels, manifest,
+                      force_remote=True)
 
     p = user_csv_path(username)
     if p.exists():
@@ -590,6 +707,14 @@ def render_sidebar():
             f"{min(st.session_state.cursor + 1, len(queue))} / {len(queue)}"
         )
         if st.button("Uitloggen"):
+            # Eerst nog een keer pushen om niets kwijt te raken
+            try:
+                manifest = load_manifest()
+                save_user_labels(st.session_state.username,
+                                  st.session_state.labels,
+                                  manifest, force_remote=True)
+            except Exception:
+                pass
             st.session_state.clear()
             st.rerun()
 
@@ -620,7 +745,17 @@ def render_sidebar():
             )
 
         st.markdown("---")
-        st.caption("Wordt automatisch opgeslagen na elke wijziging.")
+        if GIST_ENABLED:
+            if st.session_state.get("_gist_dirty"):
+                st.caption("💾 Wordt opgeslagen… (cloud-sync staat in de wacht)")
+            else:
+                last = st.session_state.get("_gist_last_save_ts")
+                if last:
+                    st.caption(f"☁️ Cloud-sync OK ({int(time.time() - last)} s geleden).")
+                else:
+                    st.caption("☁️ Cloud-sync actief.")
+        else:
+            st.caption("Wordt automatisch opgeslagen na elke wijziging.")
 
 
 # ---------------------------------------------------------------------------
