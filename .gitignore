@@ -1,0 +1,19 @@
+# Full-match source videos — too large to commit. Place locally only.
+source_videos/
+
+# Cut camera + tracking clips — hosted via GitHub Releases (or another CDN),
+# not in the repo. Remove this line if you instead want to commit them.
+videos/
+
+# Per-rater label CSVs — friends download their own; you collect them locally.
+labels/labels_*.csv
+labels/irr_report.csv
+
+# Python / IDE artefacts
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
+.vscode/
+.idea/

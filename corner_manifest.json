@@ -1,0 +1,1565 @@
+{
+  "instructions": "48 video clips required: videos/corner_{NN}_{espn|mp4|goal_left|goal_right}.mp4. cut_clips.py uses kick_time_ms + per-match offset to cut a 15-second window (5 s pre, 10 s post).",
+  "corners": [
+    {
+      "id": 1,
+      "corner_id": "2561505:412500",
+      "match_id": 2561505,
+      "match_name": "24-04-2026 FC Dordrecht vs Willem II",
+      "match_date": "20260424",
+      "kick_time_ms": 412500,
+      "match_clock": "06:52",
+      "clip_start_ms": 407500,
+      "clip_end_ms": 417500,
+      "attacking_team": "Willem II",
+      "defending_team": "Dordrecht",
+      "corner_side": "L",
+      "swing": "OUT",
+      "target_zone": "CENTRAL",
+      "delivery_type": "OUT_CENTRAL",
+      "taker_name": "Nick Doodeman",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 4,
+          "x": 35.74,
+          "y": 0.83
+        },
+        {
+          "jersey": 7,
+          "x": 48.64,
+          "y": -34.93
+        },
+        {
+          "jersey": 9,
+          "x": 42.31,
+          "y": -2.36
+        },
+        {
+          "jersey": 3,
+          "x": 37.17,
+          "y": 3.22
+        },
+        {
+          "jersey": 30,
+          "x": 39.75,
+          "y": 2.14
+        },
+        {
+          "jersey": 22,
+          "x": 17.14,
+          "y": 3.91
+        },
+        {
+          "jersey": 28,
+          "x": 36.45,
+          "y": 0.36
+        },
+        {
+          "jersey": 6,
+          "x": 5.48,
+          "y": -8.48
+        },
+        {
+          "jersey": 20,
+          "x": 28.88,
+          "y": 2.15
+        },
+        {
+          "jersey": 8,
+          "x": 23.2,
+          "y": -16.2
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 7,
+          "x": 20.98,
+          "y": 8.09
+        },
+        {
+          "jersey": 2,
+          "x": 38.97,
+          "y": 1.56
+        },
+        {
+          "jersey": 3,
+          "x": 35.83,
+          "y": 1.18
+        },
+        {
+          "jersey": 18,
+          "x": 45.12,
+          "y": -4.95
+        },
+        {
+          "jersey": 29,
+          "x": 6.64,
+          "y": -8.71
+        },
+        {
+          "jersey": 8,
+          "x": 40.28,
+          "y": 1.45
+        },
+        {
+          "jersey": 20,
+          "x": 32.47,
+          "y": -16.97
+        },
+        {
+          "jersey": 25,
+          "x": 42.8,
+          "y": -1.61
+        },
+        {
+          "jersey": 6,
+          "x": 37.47,
+          "y": 2.25
+        },
+        {
+          "jersey": 5,
+          "x": 33.79,
+          "y": 0.73
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_01_espn.mp4",
+        "mp4": "videos/corner_01_mp4.mp4",
+        "goal_left": "videos/corner_01_goal_left.mp4",
+        "goal_right": "videos/corner_01_goal_right.mp4",
+        "tracking": "videos/corner_01_tracking.mp4"
+      }
+    },
+    {
+      "id": 2,
+      "corner_id": "2561505:5255900",
+      "match_id": 2561505,
+      "match_name": "24-04-2026 FC Dordrecht vs Willem II",
+      "match_date": "20260424",
+      "kick_time_ms": 5255900,
+      "match_clock": "87:35",
+      "clip_start_ms": 5250900,
+      "clip_end_ms": 5260900,
+      "attacking_team": "Dordrecht",
+      "defending_team": "Willem II",
+      "corner_side": "R",
+      "swing": "IN",
+      "target_zone": "CENTRAL",
+      "delivery_type": "IN_CENTRAL",
+      "taker_name": "Nicol\u00e1s Rossi",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 7,
+          "x": 48.0,
+          "y": -1.65
+        },
+        {
+          "jersey": 2,
+          "x": 47.27,
+          "y": 3.23
+        },
+        {
+          "jersey": 3,
+          "x": 46.63,
+          "y": 2.07
+        },
+        {
+          "jersey": 18,
+          "x": 33.26,
+          "y": -11.44
+        },
+        {
+          "jersey": 16,
+          "x": 45.88,
+          "y": -1.22
+        },
+        {
+          "jersey": 29,
+          "x": 48.88,
+          "y": 28.74
+        },
+        {
+          "jersey": 20,
+          "x": 28.04,
+          "y": 1.48
+        },
+        {
+          "jersey": 25,
+          "x": 45.39,
+          "y": -0.08
+        },
+        {
+          "jersey": 6,
+          "x": 45.24,
+          "y": -1.53
+        },
+        {
+          "jersey": 5,
+          "x": 17.39,
+          "y": 2.7
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 4,
+          "x": 46.91,
+          "y": -1.07
+        },
+        {
+          "jersey": 7,
+          "x": 39.31,
+          "y": -6.11
+        },
+        {
+          "jersey": 3,
+          "x": 48.91,
+          "y": 3.52
+        },
+        {
+          "jersey": 30,
+          "x": 46.96,
+          "y": 1.12
+        },
+        {
+          "jersey": 22,
+          "x": 44.85,
+          "y": -2.2
+        },
+        {
+          "jersey": 47,
+          "x": 45.95,
+          "y": 1.41
+        },
+        {
+          "jersey": 6,
+          "x": 45.53,
+          "y": -2.23
+        },
+        {
+          "jersey": 11,
+          "x": 48.26,
+          "y": -1.54
+        },
+        {
+          "jersey": 20,
+          "x": 38.01,
+          "y": 2.17
+        },
+        {
+          "jersey": 8,
+          "x": 48.15,
+          "y": 0.47
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_02_espn.mp4",
+        "mp4": "videos/corner_02_mp4.mp4",
+        "goal_left": "videos/corner_02_goal_left.mp4",
+        "goal_right": "videos/corner_02_goal_right.mp4",
+        "tracking": "videos/corner_02_tracking.mp4"
+      }
+    },
+    {
+      "id": 3,
+      "corner_id": "2561495:5760700",
+      "match_id": 2561495,
+      "match_name": "17-04-2026 Almere City FC vs FC Dordrecht",
+      "match_date": "20260417",
+      "kick_time_ms": 5760700,
+      "match_clock": "96:00",
+      "clip_start_ms": 5755700,
+      "clip_end_ms": 5765700,
+      "attacking_team": "Almere City",
+      "defending_team": "Dordrecht",
+      "corner_side": "L",
+      "swing": "IN",
+      "target_zone": "NEAR",
+      "delivery_type": "IN_NEAR",
+      "taker_name": "Enzo Cornelisse",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 2,
+          "x": 23.52,
+          "y": -11.09
+        },
+        {
+          "jersey": 5,
+          "x": 21.81,
+          "y": -1.06
+        },
+        {
+          "jersey": 22,
+          "x": 45.0,
+          "y": -1.21
+        },
+        {
+          "jersey": 23,
+          "x": 49.38,
+          "y": -0.36
+        },
+        {
+          "jersey": 4,
+          "x": 44.58,
+          "y": 1.5
+        },
+        {
+          "jersey": 6,
+          "x": 52.9,
+          "y": -32.88
+        },
+        {
+          "jersey": 21,
+          "x": 39.11,
+          "y": -26.49
+        },
+        {
+          "jersey": 9,
+          "x": 47.37,
+          "y": 0.78
+        },
+        {
+          "jersey": 17,
+          "x": 33.42,
+          "y": -7.35
+        },
+        {
+          "jersey": 19,
+          "x": 41.2,
+          "y": 7.54
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 7,
+          "x": 37.52,
+          "y": -5.88
+        },
+        {
+          "jersey": 14,
+          "x": 41.47,
+          "y": -23.11
+        },
+        {
+          "jersey": 3,
+          "x": 46.26,
+          "y": 1.6
+        },
+        {
+          "jersey": 18,
+          "x": 40.36,
+          "y": 5.03
+        },
+        {
+          "jersey": 16,
+          "x": 45.33,
+          "y": -0.31
+        },
+        {
+          "jersey": 15,
+          "x": 48.72,
+          "y": -3.95
+        },
+        {
+          "jersey": 9,
+          "x": 47.32,
+          "y": 2.14
+        },
+        {
+          "jersey": 25,
+          "x": 45.14,
+          "y": 3.23
+        },
+        {
+          "jersey": 6,
+          "x": 49.58,
+          "y": -0.28
+        },
+        {
+          "jersey": 5,
+          "x": 37.44,
+          "y": 1.36
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_03_espn.mp4",
+        "mp4": "videos/corner_03_mp4.mp4",
+        "goal_left": "videos/corner_03_goal_left.mp4",
+        "goal_right": "videos/corner_03_goal_right.mp4",
+        "tracking": "videos/corner_03_tracking.mp4"
+      }
+    },
+    {
+      "id": 4,
+      "corner_id": "2561495:4285400",
+      "match_id": 2561495,
+      "match_name": "17-04-2026 Almere City FC vs FC Dordrecht",
+      "match_date": "20260417",
+      "kick_time_ms": 4285400,
+      "match_clock": "71:25",
+      "clip_start_ms": 4280400,
+      "clip_end_ms": 4290400,
+      "attacking_team": "Almere City",
+      "defending_team": "Dordrecht",
+      "corner_side": "R",
+      "swing": "OUT",
+      "target_zone": "CENTRAL",
+      "delivery_type": "OUT_CENTRAL",
+      "taker_name": "Enzo Cornelisse",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 2,
+          "x": 21.67,
+          "y": 1.31
+        },
+        {
+          "jersey": 5,
+          "x": 21.6,
+          "y": -1.06
+        },
+        {
+          "jersey": 22,
+          "x": 43.27,
+          "y": 1.05
+        },
+        {
+          "jersey": 4,
+          "x": 42.13,
+          "y": 1.81
+        },
+        {
+          "jersey": 6,
+          "x": 50.35,
+          "y": 33.92
+        },
+        {
+          "jersey": 21,
+          "x": 36.33,
+          "y": 18.08
+        },
+        {
+          "jersey": 10,
+          "x": 50.22,
+          "y": 1.87
+        },
+        {
+          "jersey": 9,
+          "x": 44.94,
+          "y": -0.86
+        },
+        {
+          "jersey": 40,
+          "x": 36.29,
+          "y": -3.98
+        },
+        {
+          "jersey": 37,
+          "x": 44.32,
+          "y": -3.68
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 7,
+          "x": 34.95,
+          "y": 9.95
+        },
+        {
+          "jersey": 14,
+          "x": 43.82,
+          "y": 23.31
+        },
+        {
+          "jersey": 59,
+          "x": 47.56,
+          "y": 0.81
+        },
+        {
+          "jersey": 3,
+          "x": 45.47,
+          "y": -1.42
+        },
+        {
+          "jersey": 18,
+          "x": 45.05,
+          "y": -3.52
+        },
+        {
+          "jersey": 15,
+          "x": 48.88,
+          "y": 5.83
+        },
+        {
+          "jersey": 8,
+          "x": 43.64,
+          "y": -0.5
+        },
+        {
+          "jersey": 25,
+          "x": 42.59,
+          "y": -1.55
+        },
+        {
+          "jersey": 6,
+          "x": 50.72,
+          "y": 1.76
+        },
+        {
+          "jersey": 5,
+          "x": 37.48,
+          "y": -4.15
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_04_espn.mp4",
+        "mp4": "videos/corner_04_mp4.mp4",
+        "goal_left": "videos/corner_04_goal_left.mp4",
+        "goal_right": "videos/corner_04_goal_right.mp4",
+        "tracking": "videos/corner_04_tracking.mp4"
+      }
+    },
+    {
+      "id": 5,
+      "corner_id": "7647:2354700",
+      "match_id": 7647,
+      "match_name": "14-03-2026 De Graafschap vs FC Dordrecht",
+      "match_date": "20260314",
+      "kick_time_ms": 2354700,
+      "match_clock": "39:14",
+      "clip_start_ms": 2349700,
+      "clip_end_ms": 2359700,
+      "attacking_team": "De Graafschap",
+      "defending_team": "Dordrecht",
+      "corner_side": "L",
+      "swing": "OUT",
+      "target_zone": "CENTRAL",
+      "delivery_type": "OUT_CENTRAL",
+      "taker_name": "Teun Gijselhart",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 3,
+          "x": -39.73,
+          "y": -2.06
+        },
+        {
+          "jersey": 5,
+          "x": -30.61,
+          "y": 11.32
+        },
+        {
+          "jersey": 8,
+          "x": -49.67,
+          "y": 31.48
+        },
+        {
+          "jersey": 9,
+          "x": -37.89,
+          "y": -2.13
+        },
+        {
+          "jersey": 11,
+          "x": -33.44,
+          "y": -11.42
+        },
+        {
+          "jersey": 10,
+          "x": -40.08,
+          "y": -3.56
+        },
+        {
+          "jersey": 2,
+          "x": -29.01,
+          "y": -5.86
+        },
+        {
+          "jersey": 15,
+          "x": -39.14,
+          "y": -1.78
+        },
+        {
+          "jersey": 24,
+          "x": -48.01,
+          "y": 3.97
+        },
+        {
+          "jersey": 19,
+          "x": -33.6,
+          "y": 0.44
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 23,
+          "x": -40.72,
+          "y": -1.36
+        },
+        {
+          "jersey": 3,
+          "x": -38.81,
+          "y": -2.51
+        },
+        {
+          "jersey": 16,
+          "x": -37.29,
+          "y": -3.3
+        },
+        {
+          "jersey": 15,
+          "x": -48.72,
+          "y": 3.35
+        },
+        {
+          "jersey": 9,
+          "x": -48.94,
+          "y": 5.02
+        },
+        {
+          "jersey": 22,
+          "x": -40.84,
+          "y": -3.02
+        },
+        {
+          "jersey": 20,
+          "x": -39.4,
+          "y": 10.17
+        },
+        {
+          "jersey": 25,
+          "x": -41.07,
+          "y": -5.26
+        },
+        {
+          "jersey": 6,
+          "x": -47.66,
+          "y": -3.21
+        },
+        {
+          "jersey": 77,
+          "x": -35.75,
+          "y": 0.25
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_05_espn.mp4",
+        "mp4": "videos/corner_05_mp4.mp4",
+        "goal_left": "videos/corner_05_goal_left.mp4",
+        "goal_right": "videos/corner_05_goal_right.mp4",
+        "tracking": "videos/corner_05_tracking.mp4"
+      }
+    },
+    {
+      "id": 6,
+      "corner_id": "7647:434600",
+      "match_id": 7647,
+      "match_name": "14-03-2026 De Graafschap vs FC Dordrecht",
+      "match_date": "20260314",
+      "kick_time_ms": 434600,
+      "match_clock": "07:14",
+      "clip_start_ms": 429600,
+      "clip_end_ms": 439600,
+      "attacking_team": "Dordrecht",
+      "defending_team": "De Graafschap",
+      "corner_side": "R",
+      "swing": "IN",
+      "target_zone": "CENTRAL",
+      "delivery_type": "IN_CENTRAL",
+      "taker_name": "Dani\u00ebl van Vianen",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 23,
+          "x": 51.03,
+          "y": 1.9
+        },
+        {
+          "jersey": 3,
+          "x": 34.97,
+          "y": -2.38
+        },
+        {
+          "jersey": 16,
+          "x": 25.99,
+          "y": 5.35
+        },
+        {
+          "jersey": 15,
+          "x": 51.28,
+          "y": -1.35
+        },
+        {
+          "jersey": 9,
+          "x": 48.71,
+          "y": 2.69
+        },
+        {
+          "jersey": 22,
+          "x": 48.7,
+          "y": 1.24
+        },
+        {
+          "jersey": 20,
+          "x": 33.27,
+          "y": 21.91
+        },
+        {
+          "jersey": 25,
+          "x": 36.23,
+          "y": -5.25
+        },
+        {
+          "jersey": 6,
+          "x": 51.41,
+          "y": 30.92
+        },
+        {
+          "jersey": 77,
+          "x": 51.39,
+          "y": 2.0
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 3,
+          "x": 50.22,
+          "y": 2.61
+        },
+        {
+          "jersey": 5,
+          "x": 51.01,
+          "y": -1.82
+        },
+        {
+          "jersey": 8,
+          "x": 37.35,
+          "y": -6.39
+        },
+        {
+          "jersey": 9,
+          "x": 49.73,
+          "y": 3.25
+        },
+        {
+          "jersey": 11,
+          "x": 41.19,
+          "y": 19.92
+        },
+        {
+          "jersey": 10,
+          "x": 36.14,
+          "y": -1.9
+        },
+        {
+          "jersey": 2,
+          "x": 52.72,
+          "y": -1.99
+        },
+        {
+          "jersey": 15,
+          "x": 49.02,
+          "y": -0.59
+        },
+        {
+          "jersey": 24,
+          "x": 51.94,
+          "y": 2.28
+        },
+        {
+          "jersey": 19,
+          "x": 37.33,
+          "y": 5.6
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_06_espn.mp4",
+        "mp4": "videos/corner_06_mp4.mp4",
+        "goal_left": "videos/corner_06_goal_left.mp4",
+        "goal_right": "videos/corner_06_goal_right.mp4",
+        "tracking": "videos/corner_06_tracking.mp4"
+      }
+    },
+    {
+      "id": 7,
+      "corner_id": "2561496:2657400",
+      "match_id": 2561496,
+      "match_name": "17-04-2026 Helmond Sport vs VVV-Venlo",
+      "match_date": "20260417",
+      "kick_time_ms": 2657400,
+      "match_clock": "44:17",
+      "clip_start_ms": 2652400,
+      "clip_end_ms": 2662400,
+      "attacking_team": "Helmond Sport",
+      "defending_team": "VVV Venlo",
+      "corner_side": "L",
+      "swing": "IN",
+      "target_zone": "CENTRAL",
+      "delivery_type": "IN_CENTRAL",
+      "taker_name": "Amir Absalem",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 28,
+          "x": -49.42,
+          "y": 8.0
+        },
+        {
+          "jersey": 3,
+          "x": -49.44,
+          "y": 1.0
+        },
+        {
+          "jersey": 20,
+          "x": -11.14,
+          "y": -1.24
+        },
+        {
+          "jersey": 11,
+          "x": -37.12,
+          "y": 15.26
+        },
+        {
+          "jersey": 27,
+          "x": -52.59,
+          "y": 32.66
+        },
+        {
+          "jersey": 29,
+          "x": -34.75,
+          "y": -4.81
+        },
+        {
+          "jersey": 8,
+          "x": -51.26,
+          "y": 2.46
+        },
+        {
+          "jersey": 26,
+          "x": -51.41,
+          "y": 1.09
+        },
+        {
+          "jersey": 41,
+          "x": -48.93,
+          "y": -2.91
+        },
+        {
+          "jersey": 22,
+          "x": -25.61,
+          "y": 9.23
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 3,
+          "x": -49.22,
+          "y": -3.41
+        },
+        {
+          "jersey": 9,
+          "x": -51.1,
+          "y": 2.29
+        },
+        {
+          "jersey": 33,
+          "x": -48.94,
+          "y": 1.0
+        },
+        {
+          "jersey": 15,
+          "x": -51.06,
+          "y": 2.7
+        },
+        {
+          "jersey": 18,
+          "x": -50.65,
+          "y": 7.4
+        },
+        {
+          "jersey": 17,
+          "x": -49.04,
+          "y": 4.92
+        },
+        {
+          "jersey": 5,
+          "x": -38.32,
+          "y": -3.51
+        },
+        {
+          "jersey": 11,
+          "x": -26.57,
+          "y": 9.15
+        },
+        {
+          "jersey": 42,
+          "x": -43.12,
+          "y": 14.98
+        },
+        {
+          "jersey": 23,
+          "x": -51.83,
+          "y": 0.9
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_07_espn.mp4",
+        "mp4": "videos/corner_07_mp4.mp4",
+        "goal_left": "videos/corner_07_goal_left.mp4",
+        "goal_right": "videos/corner_07_goal_right.mp4",
+        "tracking": "videos/corner_07_tracking.mp4"
+      }
+    },
+    {
+      "id": 8,
+      "corner_id": "2561496:531600",
+      "match_id": 2561496,
+      "match_name": "17-04-2026 Helmond Sport vs VVV-Venlo",
+      "match_date": "20260417",
+      "kick_time_ms": 531600,
+      "match_clock": "08:51",
+      "clip_start_ms": 526600,
+      "clip_end_ms": 536600,
+      "attacking_team": "Helmond Sport",
+      "defending_team": "VVV Venlo",
+      "corner_side": "R",
+      "swing": "IN",
+      "target_zone": "CENTRAL",
+      "delivery_type": "IN_CENTRAL",
+      "taker_name": "Lennerd Daneels",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 28,
+          "x": -49.04,
+          "y": -5.04
+        },
+        {
+          "jersey": 3,
+          "x": -45.05,
+          "y": 4.19
+        },
+        {
+          "jersey": 20,
+          "x": -10.59,
+          "y": -3.48
+        },
+        {
+          "jersey": 11,
+          "x": -52.8,
+          "y": -32.75
+        },
+        {
+          "jersey": 27,
+          "x": -37.08,
+          "y": -25.4
+        },
+        {
+          "jersey": 29,
+          "x": -29.62,
+          "y": -2.24
+        },
+        {
+          "jersey": 8,
+          "x": -47.99,
+          "y": -0.67
+        },
+        {
+          "jersey": 26,
+          "x": -45.03,
+          "y": 4.51
+        },
+        {
+          "jersey": 41,
+          "x": -44.46,
+          "y": 5.49
+        },
+        {
+          "jersey": 22,
+          "x": -15.8,
+          "y": -11.44
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 3,
+          "x": -46.06,
+          "y": 6.57
+        },
+        {
+          "jersey": 9,
+          "x": -50.6,
+          "y": -1.29
+        },
+        {
+          "jersey": 33,
+          "x": -44.8,
+          "y": 3.8
+        },
+        {
+          "jersey": 15,
+          "x": -47.9,
+          "y": 0.6
+        },
+        {
+          "jersey": 18,
+          "x": -49.2,
+          "y": -5.79
+        },
+        {
+          "jersey": 17,
+          "x": -48.28,
+          "y": -3.79
+        },
+        {
+          "jersey": 5,
+          "x": -35.99,
+          "y": -1.49
+        },
+        {
+          "jersey": 11,
+          "x": -13.95,
+          "y": -10.37
+        },
+        {
+          "jersey": 42,
+          "x": -44.46,
+          "y": -22.63
+        },
+        {
+          "jersey": 23,
+          "x": -45.99,
+          "y": 4.91
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_08_espn.mp4",
+        "mp4": "videos/corner_08_mp4.mp4",
+        "goal_left": "videos/corner_08_goal_left.mp4",
+        "goal_right": "videos/corner_08_goal_right.mp4",
+        "tracking": "videos/corner_08_tracking.mp4"
+      }
+    },
+    {
+      "id": 9,
+      "corner_id": "2561483:4518200",
+      "match_id": 2561483,
+      "match_name": "06-04-2026 Jong PSV vs VVV-Venlo",
+      "match_date": "20260406",
+      "kick_time_ms": 4518200,
+      "match_clock": "75:18",
+      "clip_start_ms": 4513200,
+      "clip_end_ms": 4523200,
+      "attacking_team": "Jong PSV Eindhoven",
+      "defending_team": "VVV Venlo",
+      "corner_side": "L",
+      "swing": "IN",
+      "target_zone": "CENTRAL",
+      "delivery_type": "IN_CENTRAL",
+      "taker_name": "Wessel Kuhn",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 5,
+          "x": 53.05,
+          "y": -33.3
+        },
+        {
+          "jersey": 10,
+          "x": 39.54,
+          "y": 10.5
+        },
+        {
+          "jersey": 2,
+          "x": 15.75,
+          "y": -8.83
+        },
+        {
+          "jersey": 7,
+          "x": 48.25,
+          "y": -2.69
+        },
+        {
+          "jersey": 3,
+          "x": 37.84,
+          "y": 8.57
+        },
+        {
+          "jersey": 6,
+          "x": 44.1,
+          "y": -32.59
+        },
+        {
+          "jersey": 17,
+          "x": 30.33,
+          "y": -17.0
+        },
+        {
+          "jersey": 9,
+          "x": 36.4,
+          "y": 8.87
+        },
+        {
+          "jersey": 4,
+          "x": 24.6,
+          "y": -9.91
+        },
+        {
+          "jersey": 8,
+          "x": 42.72,
+          "y": 3.93
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 24,
+          "x": 44.21,
+          "y": -24.39
+        },
+        {
+          "jersey": 3,
+          "x": 38.09,
+          "y": 8.2
+        },
+        {
+          "jersey": 9,
+          "x": 49.79,
+          "y": -1.72
+        },
+        {
+          "jersey": 33,
+          "x": 42.98,
+          "y": 3.32
+        },
+        {
+          "jersey": 15,
+          "x": 39.42,
+          "y": 10.29
+        },
+        {
+          "jersey": 18,
+          "x": 23.81,
+          "y": -11.07
+        },
+        {
+          "jersey": 17,
+          "x": 40.84,
+          "y": 10.21
+        },
+        {
+          "jersey": 16,
+          "x": 49.95,
+          "y": -13.86
+        },
+        {
+          "jersey": 25,
+          "x": 36.95,
+          "y": -9.5
+        },
+        {
+          "jersey": 23,
+          "x": 50.38,
+          "y": -0.96
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_09_espn.mp4",
+        "mp4": "videos/corner_09_mp4.mp4",
+        "goal_left": "videos/corner_09_goal_left.mp4",
+        "goal_right": "videos/corner_09_goal_right.mp4",
+        "tracking": "videos/corner_09_tracking.mp4"
+      }
+    },
+    {
+      "id": 10,
+      "corner_id": "2561483:1923800",
+      "match_id": 2561483,
+      "match_name": "06-04-2026 Jong PSV vs VVV-Venlo",
+      "match_date": "20260406",
+      "kick_time_ms": 1923800,
+      "match_clock": "32:03",
+      "clip_start_ms": 1918800,
+      "clip_end_ms": 1928800,
+      "attacking_team": "VVV Venlo",
+      "defending_team": "Jong PSV Eindhoven",
+      "corner_side": "R",
+      "swing": "OUT",
+      "target_zone": "NEAR",
+      "delivery_type": "OUT_NEAR",
+      "taker_name": "Philip Heise",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 24,
+          "x": 46.7,
+          "y": -5.44
+        },
+        {
+          "jersey": 3,
+          "x": 46.76,
+          "y": -7.97
+        },
+        {
+          "jersey": 9,
+          "x": 38.78,
+          "y": -8.62
+        },
+        {
+          "jersey": 33,
+          "x": 39.45,
+          "y": -5.76
+        },
+        {
+          "jersey": 15,
+          "x": 35.67,
+          "y": 6.84
+        },
+        {
+          "jersey": 18,
+          "x": 43.5,
+          "y": 0.54
+        },
+        {
+          "jersey": 17,
+          "x": 41.8,
+          "y": -5.76
+        },
+        {
+          "jersey": 16,
+          "x": 51.13,
+          "y": 33.61
+        },
+        {
+          "jersey": 25,
+          "x": 36.2,
+          "y": 16.62
+        },
+        {
+          "jersey": 23,
+          "x": 19.0,
+          "y": 1.12
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 5,
+          "x": 49.27,
+          "y": 4.64
+        },
+        {
+          "jersey": 10,
+          "x": 39.88,
+          "y": -5.86
+        },
+        {
+          "jersey": 2,
+          "x": 47.08,
+          "y": -7.26
+        },
+        {
+          "jersey": 7,
+          "x": 42.19,
+          "y": 7.15
+        },
+        {
+          "jersey": 3,
+          "x": 47.67,
+          "y": -0.68
+        },
+        {
+          "jersey": 6,
+          "x": 43.74,
+          "y": -4.67
+        },
+        {
+          "jersey": 11,
+          "x": 44.29,
+          "y": 15.58
+        },
+        {
+          "jersey": 9,
+          "x": 46.88,
+          "y": 1.57
+        },
+        {
+          "jersey": 4,
+          "x": 49.29,
+          "y": -3.3
+        },
+        {
+          "jersey": 8,
+          "x": 41.64,
+          "y": -6.95
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_10_espn.mp4",
+        "mp4": "videos/corner_10_mp4.mp4",
+        "goal_left": "videos/corner_10_goal_left.mp4",
+        "goal_right": "videos/corner_10_goal_right.mp4",
+        "tracking": "videos/corner_10_tracking.mp4"
+      }
+    },
+    {
+      "id": 11,
+      "corner_id": "2561495:4360200",
+      "match_id": 2561495,
+      "match_name": "17-04-2026 Almere City FC vs FC Dordrecht",
+      "match_date": "20260417",
+      "kick_time_ms": 4360200,
+      "match_clock": "72:40",
+      "clip_start_ms": 4355200,
+      "clip_end_ms": 4365200,
+      "attacking_team": "Almere City",
+      "defending_team": "Dordrecht",
+      "corner_side": "R",
+      "swing": "OUT",
+      "target_zone": "NEAR",
+      "delivery_type": "OUT_NEAR",
+      "taker_name": "Enzo Cornelisse",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 2,
+          "x": 26.86,
+          "y": -0.73
+        },
+        {
+          "jersey": 5,
+          "x": 24.32,
+          "y": 6.25
+        },
+        {
+          "jersey": 22,
+          "x": 42.84,
+          "y": 1.7
+        },
+        {
+          "jersey": 4,
+          "x": 39.45,
+          "y": 1.18
+        },
+        {
+          "jersey": 6,
+          "x": 49.51,
+          "y": 33.1
+        },
+        {
+          "jersey": 21,
+          "x": 33.36,
+          "y": 16.48
+        },
+        {
+          "jersey": 10,
+          "x": 50.69,
+          "y": 1.32
+        },
+        {
+          "jersey": 9,
+          "x": 40.62,
+          "y": -4.42
+        },
+        {
+          "jersey": 40,
+          "x": 39.26,
+          "y": -0.04
+        },
+        {
+          "jersey": 37,
+          "x": 42.2,
+          "y": -6.4
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 7,
+          "x": 37.39,
+          "y": 5.83
+        },
+        {
+          "jersey": 14,
+          "x": 40.75,
+          "y": 21.51
+        },
+        {
+          "jersey": 59,
+          "x": 47.73,
+          "y": 0.06
+        },
+        {
+          "jersey": 3,
+          "x": 43.83,
+          "y": -1.87
+        },
+        {
+          "jersey": 18,
+          "x": 43.64,
+          "y": -7.26
+        },
+        {
+          "jersey": 15,
+          "x": 47.92,
+          "y": 5.42
+        },
+        {
+          "jersey": 8,
+          "x": 43.05,
+          "y": 0.11
+        },
+        {
+          "jersey": 25,
+          "x": 41.41,
+          "y": -1.41
+        },
+        {
+          "jersey": 6,
+          "x": 49.42,
+          "y": 1.28
+        },
+        {
+          "jersey": 5,
+          "x": 39.01,
+          "y": -2.12
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_11_espn.mp4",
+        "mp4": "videos/corner_11_mp4.mp4",
+        "goal_left": "videos/corner_11_goal_left.mp4",
+        "goal_right": "videos/corner_11_goal_right.mp4",
+        "tracking": "videos/corner_11_tracking.mp4"
+      }
+    },
+    {
+      "id": 12,
+      "corner_id": "2561483:351500",
+      "match_id": 2561483,
+      "match_name": "06-04-2026 Jong PSV vs VVV-Venlo",
+      "match_date": "20260406",
+      "kick_time_ms": 351500,
+      "match_clock": "05:51",
+      "clip_start_ms": 346500,
+      "clip_end_ms": 356500,
+      "attacking_team": "VVV Venlo",
+      "defending_team": "Jong PSV Eindhoven",
+      "corner_side": "R",
+      "swing": "OUT",
+      "target_zone": "FAR",
+      "delivery_type": "OUT_FAR",
+      "taker_name": "Philip Heise",
+      "taker_jersey": null,
+      "attackers": [
+        {
+          "jersey": 24,
+          "x": 45.14,
+          "y": -5.74
+        },
+        {
+          "jersey": 3,
+          "x": 45.08,
+          "y": -3.27
+        },
+        {
+          "jersey": 9,
+          "x": 39.84,
+          "y": -6.56
+        },
+        {
+          "jersey": 33,
+          "x": 42.14,
+          "y": 0.59
+        },
+        {
+          "jersey": 15,
+          "x": 33.46,
+          "y": 6.94
+        },
+        {
+          "jersey": 18,
+          "x": 45.07,
+          "y": 3.1
+        },
+        {
+          "jersey": 17,
+          "x": 40.83,
+          "y": -4.24
+        },
+        {
+          "jersey": 16,
+          "x": 51.69,
+          "y": 34.15
+        },
+        {
+          "jersey": 25,
+          "x": 38.18,
+          "y": 16.33
+        },
+        {
+          "jersey": 23,
+          "x": 19.06,
+          "y": -2.01
+        }
+      ],
+      "defenders": [
+        {
+          "jersey": 5,
+          "x": 49.24,
+          "y": 4.98
+        },
+        {
+          "jersey": 10,
+          "x": 42.32,
+          "y": 0.84
+        },
+        {
+          "jersey": 2,
+          "x": 45.94,
+          "y": -4.95
+        },
+        {
+          "jersey": 7,
+          "x": 42.76,
+          "y": 7.25
+        },
+        {
+          "jersey": 3,
+          "x": 47.61,
+          "y": -0.49
+        },
+        {
+          "jersey": 6,
+          "x": 46.87,
+          "y": -2.62
+        },
+        {
+          "jersey": 11,
+          "x": 45.17,
+          "y": 15.9
+        },
+        {
+          "jersey": 9,
+          "x": 47.6,
+          "y": 1.78
+        },
+        {
+          "jersey": 4,
+          "x": 47.83,
+          "y": -3.15
+        },
+        {
+          "jersey": 8,
+          "x": 40.83,
+          "y": -5.7
+        }
+      ],
+      "videos": {
+        "espn": "videos/corner_12_espn.mp4",
+        "mp4": "videos/corner_12_mp4.mp4",
+        "goal_left": "videos/corner_12_goal_left.mp4",
+        "goal_right": "videos/corner_12_goal_right.mp4",
+        "tracking": "videos/corner_12_tracking.mp4"
+      }
+    }
+  ]
+}
