@@ -18,17 +18,12 @@
       "target_zone": "CENTRAL",
       "delivery_type": "OUT_CENTRAL",
       "taker_name": "Nick Doodeman",
-      "taker_jersey": null,
+      "taker_jersey": 7,
       "attackers": [
         {
           "jersey": 4,
           "x": 35.74,
           "y": 0.83
-        },
-        {
-          "jersey": 7,
-          "x": 48.64,
-          "y": -34.93
         },
         {
           "jersey": 9,
@@ -148,7 +143,7 @@
       "target_zone": "CENTRAL",
       "delivery_type": "IN_CENTRAL",
       "taker_name": "Nicol\u00e1s Rossi",
-      "taker_jersey": null,
+      "taker_jersey": 29,
       "attackers": [
         {
           "jersey": 7,
@@ -174,11 +169,6 @@
           "jersey": 16,
           "x": 45.88,
           "y": -1.22
-        },
-        {
-          "jersey": 29,
-          "x": 48.88,
-          "y": 28.74
         },
         {
           "jersey": 20,
@@ -278,7 +268,7 @@
       "target_zone": "NEAR",
       "delivery_type": "IN_NEAR",
       "taker_name": "Enzo Cornelisse",
-      "taker_jersey": null,
+      "taker_jersey": 6,
       "attackers": [
         {
           "jersey": 2,
@@ -304,11 +294,6 @@
           "jersey": 4,
           "x": 44.58,
           "y": 1.5
-        },
-        {
-          "jersey": 6,
-          "x": 52.9,
-          "y": -32.88
         },
         {
           "jersey": 21,
@@ -408,7 +393,7 @@
       "target_zone": "CENTRAL",
       "delivery_type": "OUT_CENTRAL",
       "taker_name": "Enzo Cornelisse",
-      "taker_jersey": null,
+      "taker_jersey": 6,
       "attackers": [
         {
           "jersey": 2,
@@ -429,11 +414,6 @@
           "jersey": 4,
           "x": 42.13,
           "y": 1.81
-        },
-        {
-          "jersey": 6,
-          "x": 50.35,
-          "y": 33.92
         },
         {
           "jersey": 21,
@@ -538,7 +518,7 @@
       "target_zone": "CENTRAL",
       "delivery_type": "OUT_CENTRAL",
       "taker_name": "Teun Gijselhart",
-      "taker_jersey": null,
+      "taker_jersey": 8,
       "attackers": [
         {
           "jersey": 3,
@@ -549,11 +529,6 @@
           "jersey": 5,
           "x": -30.61,
           "y": 11.32
-        },
-        {
-          "jersey": 8,
-          "x": -49.67,
-          "y": 31.48
         },
         {
           "jersey": 9,
@@ -668,7 +643,7 @@
       "target_zone": "CENTRAL",
       "delivery_type": "IN_CENTRAL",
       "taker_name": "Dani\u00ebl van Vianen",
-      "taker_jersey": null,
+      "taker_jersey": 6,
       "attackers": [
         {
           "jersey": 23,
@@ -709,11 +684,6 @@
           "jersey": 25,
           "x": 36.23,
           "y": -5.25
-        },
-        {
-          "jersey": 6,
-          "x": 51.41,
-          "y": 30.92
         },
         {
           "jersey": 77,
@@ -798,7 +768,7 @@
       "target_zone": "CENTRAL",
       "delivery_type": "IN_CENTRAL",
       "taker_name": "Amir Absalem",
-      "taker_jersey": null,
+      "taker_jersey": 27,
       "attackers": [
         {
           "jersey": 28,
@@ -819,11 +789,6 @@
           "jersey": 11,
           "x": -37.12,
           "y": 15.26
-        },
-        {
-          "jersey": 27,
-          "x": -52.59,
-          "y": 32.66
         },
         {
           "jersey": 29,
@@ -928,7 +893,7 @@
       "target_zone": "CENTRAL",
       "delivery_type": "IN_CENTRAL",
       "taker_name": "Lennerd Daneels",
-      "taker_jersey": null,
+      "taker_jersey": 11,
       "attackers": [
         {
           "jersey": 28,
@@ -944,11 +909,6 @@
           "jersey": 20,
           "x": -10.59,
           "y": -3.48
-        },
-        {
-          "jersey": 11,
-          "x": -52.8,
-          "y": -32.75
         },
         {
           "jersey": 27,
@@ -1058,13 +1018,8 @@
       "target_zone": "CENTRAL",
       "delivery_type": "IN_CENTRAL",
       "taker_name": "Wessel Kuhn",
-      "taker_jersey": null,
+      "taker_jersey": 5,
       "attackers": [
-        {
-          "jersey": 5,
-          "x": 53.05,
-          "y": -33.3
-        },
         {
           "jersey": 10,
           "x": 39.54,
@@ -1188,7 +1143,7 @@
       "target_zone": "NEAR",
       "delivery_type": "OUT_NEAR",
       "taker_name": "Philip Heise",
-      "taker_jersey": null,
+      "taker_jersey": 16,
       "attackers": [
         {
           "jersey": 24,
@@ -1224,11 +1179,6 @@
           "jersey": 17,
           "x": 41.8,
           "y": -5.76
-        },
-        {
-          "jersey": 16,
-          "x": 51.13,
-          "y": 33.61
         },
         {
           "jersey": 25,
@@ -1318,7 +1268,7 @@
       "target_zone": "NEAR",
       "delivery_type": "OUT_NEAR",
       "taker_name": "Enzo Cornelisse",
-      "taker_jersey": null,
+      "taker_jersey": 6,
       "attackers": [
         {
           "jersey": 2,
@@ -1339,11 +1289,6 @@
           "jersey": 4,
           "x": 39.45,
           "y": 1.18
-        },
-        {
-          "jersey": 6,
-          "x": 49.51,
-          "y": 33.1
         },
         {
           "jersey": 21,
@@ -1448,7 +1393,7 @@
       "target_zone": "FAR",
       "delivery_type": "OUT_FAR",
       "taker_name": "Philip Heise",
-      "taker_jersey": null,
+      "taker_jersey": 16,
       "attackers": [
         {
           "jersey": 24,
@@ -1484,11 +1429,6 @@
           "jersey": 17,
           "x": 40.83,
           "y": -4.24
-        },
-        {
-          "jersey": 16,
-          "x": 51.69,
-          "y": 34.15
         },
         {
           "jersey": 25,

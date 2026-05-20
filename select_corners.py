@@ -160,7 +160,10 @@ def main():
         home_nm  = meta["homeTeamName"]
         away_nm  = meta["awayTeamName"]
         gk_home, gk_away = set(), set()
+        pid_to_shirt = {}    # SciSports playerId  ->  shirt number
         for p in ev_root.get("players", []):
+            if "shirtNumber" in p and "playerId" in p:
+                pid_to_shirt[int(p["playerId"])] = p["shirtNumber"]
             if "goalkeeper" in p.get("positionName","").lower():
                 if p.get("teamId") == home_id: gk_home.add(p["shirtNumber"])
                 elif p.get("teamId") == away_id: gk_away.add(p["shirtNumber"])
@@ -183,11 +186,21 @@ def main():
         att_team_name = home_nm if taker_is_home else away_nm
         def_team_name = away_nm if taker_is_home else home_nm
 
+        # The corner taker's row in the CSV stores the SciSports player_id
+        # (e.g. 1943), not their shirt number. Map it to the actual shirt
+        # via the events-JSON player roster so we can exclude them from the
+        # roster of attackers to label.
+        try:
+            taker_pid = int(c.get("player_id"))
+        except (TypeError, ValueError):
+            taker_pid = None
+        taker_shirt = pid_to_shirt.get(taker_pid)
+
         attackers = []
         for p in fr.get(att_key, []):
             j = p["s"]
             if j in gk_att: continue
-            if j == c.get("player_id"): continue   # skip the corner taker
+            if taker_shirt is not None and j == taker_shirt: continue   # skip the corner taker
             attackers.append({"jersey": j, "x": round(p["x"], 2), "y": round(p["y"], 2)})
         defenders = []
         for p in fr.get(def_key, []):
@@ -219,7 +232,7 @@ def main():
             "target_zone":    c.get("target_zone", ""),
             "delivery_type":  c.get("delivery_type", ""),
             "taker_name":     c.get("player_name", ""),
-            "taker_jersey":   None,   # the taker's jersey is excluded from att roster
+            "taker_jersey":   taker_shirt,   # excluded from "attackers" below
             "attackers":      attackers,
             "defenders":      defenders,
             # File names that cut_clips.py / make_tracking_videos.py produce
