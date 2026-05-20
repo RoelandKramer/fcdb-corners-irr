@@ -78,7 +78,7 @@ USER_ASSIGNMENTS = {
     "JorisPanman":   [7, 8, 9, 10, 11, 12],
     "MaxHautvast":   [1, 2, 7, 8, 9, 10],
     "RubenDeLaat":   [3, 4, 5, 6, 11, 12],
-    "SimonDirkx":    [1, 3, 5, 7, 9, 11],
+    "JopZweekhorst": [1, 3, 5, 7, 9, 11],
     "SamVeld":       [2, 4, 6, 8, 10, 12],
 }
 
