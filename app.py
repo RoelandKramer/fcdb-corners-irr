@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import base64
 import json
+import re
 import time
 from datetime import datetime
 from pathlib import Path
@@ -670,8 +671,10 @@ def corner_page(manifest: dict):
 # Klaar-pagina
 # ---------------------------------------------------------------------------
 def done_page(username: str, manifest: dict):
-    st.title("Helemaal klaar! 🎉")
-    st.write(f"Bedankt, **{username}** — je labels zijn opgeslagen.")
+    st.title("Helemaal klaar!")
+    m = re.match(r"^[A-Z][a-z]+", username)
+    first_name = m.group(0) if m else username
+    st.write(f"Bedankt, **{first_name}** — je labels zijn opgeslagen!")
     save_user_labels(username, st.session_state.labels, manifest,
                       force_remote=True)
 
