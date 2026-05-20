@@ -678,20 +678,6 @@ def done_page(username: str, manifest: dict):
     save_user_labels(username, st.session_state.labels, manifest,
                       force_remote=True)
 
-    p = user_csv_path(username)
-    if p.exists():
-        st.download_button(
-            label="Download mijn labels (CSV)",
-            data=p.read_bytes(),
-            file_name=p.name,
-            mime="text/csv",
-            type="primary",
-        )
-    st.caption(
-        "Stuur dit CSV-bestand naar Roeland (of het wordt automatisch "
-        "opgehaald als je de app op zijn gedeelde server hebt gebruikt)."
-    )
-
     if st.button("Labels opnieuw bewerken"):
         st.session_state.cursor = 0
         st.rerun()
