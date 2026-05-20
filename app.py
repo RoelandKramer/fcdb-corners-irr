@@ -721,17 +721,20 @@ def render_sidebar():
         st.markdown("---")
         with st.expander("ℹ️ Uitleg Labelen", expanded=False):
             st.markdown(
-                "- **Switch tussen camerastandpunten** om bijvoorbeeld "
-                "rugnummers beter te zien of meer inzicht te krijgen in "
-                "wat een speler doet. De afspeelpositie blijft hetzelfde "
-                "als je wisselt — je kunt dus gewoon op pauze drukken en "
-                "vanuit elke hoek hetzelfde moment bekijken.\n"
-                "- De **Tracking 2D** view is vooral handig om in één "
-                "oogopslag spelers te identificeren die **niet** meedoen "
-                "aan de corner (vaak ver weg blijven staan → meestal "
-                "**STATIC** bij aanvallers, of **COUNTER** / **SHORT** "
-                "bij verdedigers). Die kan je daarmee direct labelen.\n"
-                "- Bij twijfel: kies **WEET NIET** in plaats van te gokken."
+                "- Focus eerst op één team (aanvallers óf verdedigers — "
+                "zelf doe ik vaak eerst aanvallers). Kijk welke rugnummers "
+                "direct opvallen omdat ze iets specifieks doen, noteer die, "
+                "en werk zo door de lijst.\n"
+                "- Switch veel tussen camerastandpunten. Vooral de "
+                "goal-camera's zijn nuttig, want die zitten dichter op de "
+                "actie. De afspeelpositie blijft hetzelfde als je wisselt — "
+                "je kunt dus gewoon pauzeren en vanuit elke hoek hetzelfde "
+                "moment bekijken.\n"
+                "- De Tracking 2D view helpt om in één oogopslag te zien "
+                "welke spelers niet meedoen — niet mee-aanvallen "
+                "(→ STATIC) of niet mee-verdedigen (→ COUNTER). Ook handig "
+                "om rugnummers te achterhalen wanneer die op de camera "
+                "moeilijk te lezen zijn."
             )
         with st.expander("ℹ️ Uitleg aanvallerrollen", expanded=False):
             for v in ATT_ROLE_HELP.values():
