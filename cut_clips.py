@@ -92,10 +92,9 @@ MATCH_OFFSETS_MS: dict = {
     (2561483, "espn"):    354_000,
 }
 
-
 def offset_for(match_id: int, cam: str) -> int:
-    """Resolve the offset to apply to (match_id, cam). Per-camera overrides
-    fall through to the per-match value, defaulting to 0."""
+    """Resolve the offset to apply to (match_id, cam). Per-camera entries
+    override per-match entries; unknown matches default to 0."""
     if (match_id, cam) in MATCH_OFFSETS_MS:
         return MATCH_OFFSETS_MS[(match_id, cam)]
     return MATCH_OFFSETS_MS.get(match_id, 0)
