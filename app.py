@@ -3,7 +3,7 @@ Inter-Rater Reliability — Corner-rollen Labelen App (Nederlandstalig)
 ======================================================================
 
 Layout naast elkaar: video links, rol-invoerformulier rechts
-(Aanvallers / Verdedigers in aparte tabs).
+(Verdedigers / Aanvallers in aparte tabs).
 
 Het formulier zit binnen een `@st.fragment`, zodat het kiezen van een rol
 alleen het formulier opnieuw rendert — de video links blijft precies op
@@ -93,7 +93,7 @@ DEF_LABELS_NL = {
     "MAN":         "MAN (mandekker)",
     "ZONAL":       "ZONAL (zonedekking)",
     "SHORT":       "SHORT (korte corner)",
-    "COUNTER":     "COUNTER (counter-dekking)",
+    "COUNTER":     "COUNTER (Blijft voorin)",
     "DON'T KNOW":  "WEET NIET",
 }
 
@@ -120,7 +120,7 @@ DEF_ROLE_HELP = {
     "SHORT":   "**SHORT (Korte corner)** — staat klaar om de speler die "
                "zich kort heeft aangeboden aan te pakken; opgesteld om "
                "een korte corner te verdedigen.",
-    "COUNTER": "**COUNTER (Counter-dekking)** — staat hoog op het veld "
+    "COUNTER": "**COUNTER (Blijft voorin)** — staat hoog op het veld "
                "(rond de middenlijn) om de tegenaanval te dekken. "
                "Verdedigt het strafschopgebied zelf niet.",
 }
@@ -584,19 +584,10 @@ def _defender_row(corner: dict, corner_idx: int, p: dict,
 @st.fragment
 def role_form_fragment(corner: dict, corner_idx: int,
                        username: str, manifest: dict):
-    att_tab, def_tab = st.tabs([
-        f"⚔️ Aanvallers — {corner['attacking_team']} ({len(corner['attackers'])})",
+    def_tab, att_tab = st.tabs([
         f"🛡️ Verdedigers — {corner['defending_team']} ({len(corner['defenders'])})",
+        f"⚔️ Aanvallers — {corner['attacking_team']} ({len(corner['attackers'])})",
     ])
-
-    with att_tab:
-        st.caption(
-            "Kies voor elke aanvaller de rol die zijn looplijn / beweging "
-            "tijdens de corner het beste beschrijft."
-        )
-        with st.container(height=520, border=False):
-            for p in corner["attackers"]:
-                _attacker_row(corner, corner_idx, p)
 
     with def_tab:
         st.caption(
@@ -604,9 +595,18 @@ def role_form_fragment(corner: dict, corner_idx: int,
             "Bij MAN: kies ook het rugnummer van de aanvaller die hij dekt."
         )
         attacker_options = [""] + [str(a["jersey"]) for a in corner["attackers"]]
-        with st.container(height=520, border=False):
+        with st.container(height=620, border=False):
             for p in corner["defenders"]:
                 _defender_row(corner, corner_idx, p, attacker_options)
+
+    with att_tab:
+        st.caption(
+            "Kies voor elke aanvaller de rol die zijn looplijn / beweging "
+            "tijdens de corner het beste beschrijft."
+        )
+        with st.container(height=620, border=False):
+            for p in corner["attackers"]:
+                _attacker_row(corner, corner_idx, p)
 
     # Auto-save binnen de fragment (alleen wanneer een widget hierbinnen wijzigt)
     save_user_labels(username, st.session_state.labels, manifest)
@@ -638,7 +638,7 @@ def corner_page(manifest: dict):
         st.progress(progress, text=f"{int(progress*100)} % voltooid")
 
     # Naast elkaar: video links, formulier rechts
-    col_video, col_form = st.columns([1, 1], gap="large")
+    col_video, col_form = st.columns([1.2, 0.8], gap="large")
     with col_video:
         render_video(corner, corner_idx)
     with col_form:
