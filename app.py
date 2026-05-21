@@ -81,6 +81,7 @@ USER_ASSIGNMENTS = {
     "RubenDeLaat":   [3, 4, 5, 6, 11, 12],
     "JopZweekhorst": [1, 3, 5, 7, 9, 11],
     "SamVeld":       [2, 4, 6, 8, 10, 12],
+    "SimonDirkx":    [12, 11, 9, 8, 7, 6],
 }
 
 # Rolcodes (Engels) — blijven Engels zodat de CSV-output bruikbaar blijft

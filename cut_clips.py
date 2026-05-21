@@ -62,16 +62,22 @@ CLIP_POST_MS = 10000
 # default to 0 (i.e. assumes the video starts exactly at kick-off).
 MATCH_OFFSETS_MS: dict = {
     # FC Dordrecht vs Willem II (2561505)
-    #   goal_left / goal_right / mp4: kick-off at 0:21 ->  21_000 ms
+    #   mp4:                          kick-off at 0:21 ->  21_000 ms
     #   ESPN:                         kick-off at 6:27 -> 387_000 ms
-    2561505:               21_000,
-    (2561505, "espn"):    387_000,
+    #   goal_left / goal_right:       start 5 s later  -> 26_000 ms
+    2561505:                    21_000,
+    (2561505, "espn"):         387_000,
+    (2561505, "goal_left"):     26_000,
+    (2561505, "goal_right"):    26_000,
 
     # Almere City FC vs FC Dordrecht (2561495)
-    #   goal_left / goal_right / mp4: kick-off at 0:20 ->  20_000 ms
+    #   mp4:                          kick-off at 0:20 ->  20_000 ms
     #   ESPN:                         kick-off at 7:12 -> 432_000 ms
-    2561495:               20_000,
-    (2561495, "espn"):    432_000,
+    #   goal_left / goal_right:       start 8 s later  -> 28_000 ms
+    2561495:                    20_000,
+    (2561495, "espn"):         432_000,
+    (2561495, "goal_left"):     28_000,
+    (2561495, "goal_right"):    28_000,
 
     # De Graafschap vs FC Dordrecht (7647)
     #   goal_left / goal_right / mp4: kick-off at 0:19 ->  19_000 ms
