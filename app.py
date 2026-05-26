@@ -87,8 +87,11 @@ USER_ASSIGNMENTS = {
 # Rolcodes (Engels) — blijven Engels zodat de CSV-output bruikbaar blijft
 # voor de thesisanalyse. De zichtbare labels (zie *_LABELS_NL) zijn Nederlands.
 DEF_ROLES = ["", "MAN", "ZONAL", "SHORT", "COUNTER", "DON'T KNOW"]
-ATT_ROLES = ["", "TARGET", "DECOY", "STATIC", "SECOND_BALL",
-             "BLOCK_GK", "BLOCK_DEF", "DON'T KNOW"]
+ATT_ROLES = ["", "TARGET", "DECOY", "STATIC", "STAY_BACK", "SECOND_BALL",
+             "BLOCK_GK", "DON'T KNOW"]
+# Vervallen rollen die niet meer in de selectbox staan, maar bestaande
+# labels mogen ze nog hebben (worden geflagged zodat de rater corrigeert).
+DEPRECATED_ATT_ROLES = {"BLOCK_DEF"}
 
 DEF_LABELS_NL = {
     "":            "— kies —",
@@ -104,9 +107,10 @@ ATT_LABELS_NL = {
     "TARGET":       "TARGET (doelwit)",
     "DECOY":        "DECOY (afleiding)",
     "STATIC":       "STATIC (statisch)",
+    "STAY_BACK":    "STAY_BACK (blijft achter)",
     "SECOND_BALL":  "SECOND_BALL (tweede bal)",
     "BLOCK_GK":     "BLOCK_GK (keeper blokken)",
-    "BLOCK_DEF":    "BLOCK_DEF (verdediger blokken)",
+    "BLOCK_DEF":    "⚠️ BLOCK_DEF (vervallen — graag aanpassen)",
     "DON'T KNOW":   "WEET NIET",
 }
 
@@ -137,15 +141,16 @@ ATT_ROLE_HELP = {
     "STATIC":      "**STATIC (Statisch)** — kiest geen looplijn. Blijft "
                     "ongeveer op dezelfde plek staan (vaak een vasthoud- "
                     "of ankerrol).",
+    "STAY_BACK":   "**STAY_BACK (Blijft achter)** — gaat niet mee naar "
+                    "voren voor de corner. Blijft op de eigen helft of "
+                    "net daarbuiten om bij balverlies een tegenaanval "
+                    "van de tegenstander te kunnen verdedigen.",
     "SECOND_BALL": "**SECOND_BALL (Tweede bal)** — staat rond de rand van "
                     "het strafschopgebied (16-meterlijn) om uitgekopte "
                     "ballen en rebounds op te pikken.",
     "BLOCK_GK":    "**BLOCK_GK (Keeper blokken)** — staat heel dicht bij "
                     "de keeper van de tegenstander om hem van de bal af "
                     "te schermen.",
-    "BLOCK_DEF":   "**BLOCK_DEF (Verdediger blokken)** — staat dicht bij "
-                    "een specifieke verdediger met weinig beweging, om te "
-                    "voorkomen dat die verdediger om de bal kan duelleren.",
 }
 
 # ---------------------------------------------------------------------------
@@ -327,9 +332,13 @@ def login_page():
         "staat meer duiding over de verschillende rollen. Stuur me een "
         "berichtje als je ergens toch niet helemaal uitkomt. Thanks!!"
     )
-    name = st.text_input("Je gebruikersnaam (hoofdlettergevoelig)").strip()
-    pwd  = st.text_input("Wachtwoord", type="password")
-    if st.button("Inloggen", type="primary"):
+    # Form zodat Enter na het wachtwoord de Inloggen-knop indrukt
+    with st.form("login_form", clear_on_submit=False, border=False):
+        name = st.text_input("Je gebruikersnaam (hoofdlettergevoelig)").strip()
+        pwd  = st.text_input("Wachtwoord", type="password")
+        submitted = st.form_submit_button("Inloggen", type="primary")
+
+    if submitted:
         if pwd != PASSWORD:
             st.error("Verkeerd wachtwoord.")
         elif name not in USER_ASSIGNMENTS:
@@ -527,20 +536,36 @@ def render_video(corner: dict, corner_idx: int):
 def _attacker_row(corner: dict, corner_idx: int, p: dict):
     j = p["jersey"]
     current = st.session_state.labels.get((corner_idx, "ATT", j), {})
+    saved   = current.get("role", "")
+
+    # Vervallen rollen (b.v. BLOCK_DEF) blijven in de keuzelijst zolang ze
+    # actief geselecteerd staan, zodat oude labels niet stilletjes verdwijnen.
+    # Zodra de rater iets anders kiest valt de optie weg.
+    if saved in DEPRECATED_ATT_ROLES:
+        options = ATT_ROLES + [saved]
+    else:
+        options = ATT_ROLES
+
     c1, c2 = st.columns([1, 5], vertical_alignment="center")
     with c1:
         st.markdown(f"#### #{j}")
     with c2:
-        idx = ATT_ROLES.index(current.get("role")) if current.get("role") in ATT_ROLES else 0
+        idx = options.index(saved) if saved in options else 0
         role = st.selectbox(
             f"Rol voor aanvaller #{j}",
-            ATT_ROLES,
+            options,
             index=idx,
             key=f"att_{corner_idx}_{j}_role",
             format_func=lambda x: ATT_LABELS_NL.get(x, x),
             label_visibility="collapsed",
             placeholder="Kies een rol…",
         )
+        if role in DEPRECATED_ATT_ROLES:
+            st.warning(
+                f"⚠️ De rol **{role}** is vervallen. Kies hierboven aub "
+                f"een andere rol voor speler #{j}.",
+                icon="⚠️",
+            )
     st.session_state.labels[(corner_idx, "ATT", j)] = {"role": role, "marks": None}
 
 
