@@ -747,7 +747,7 @@ def render_sidebar():
                 "moment bekijken.\n"
                 "- De Tracking 2D view helpt om in één oogopslag te zien "
                 "welke spelers niet meedoen — niet mee-aanvallen "
-                "(→ STATIC) of niet mee-verdedigen (→ COUNTER). Ook handig "
+                "(→ STAY_BACK) of niet mee-verdedigen (→ COUNTER). Ook handig "
                 "om rugnummers te achterhalen wanneer die op de camera "
                 "moeilijk te lezen zijn."
             )
