@@ -661,7 +661,10 @@ def corner_page(manifest: dict):
         st.markdown(f"### Corner {cursor + 1} van {len(queue)}")
         st.caption(f"{corner['match_name']} — {corner['match_clock']}")
     with h2:
-        progress = (cursor + 1) / len(queue)
+        # Progress = corners die al zijn afgerond (cursor = index van de
+        # huidige, dus nog niet bevestigd). Bij de laatste corner (5/6) zie
+        # je dus 83%; pas op de Klaar-pagina is het 100%.
+        progress = cursor / len(queue)
         st.progress(progress, text=f"{int(progress*100)} % voltooid")
 
     # Naast elkaar: video links, formulier rechts
