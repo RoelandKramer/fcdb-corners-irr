@@ -120,8 +120,8 @@ DEF_ROLE_HELP = {
     "MAN":     "**MAN (Mandekker)** — volgt één specifieke aanvaller "
                "gedurende de hele corner. Blijft dicht bij hem en volgt "
                "zijn beweging totdat de bal arriveert.",
-    "ZONAL":   "**ZONAL (Zonedekking)** — bewaakt een vaste zone in het "
-               "strafschopgebied. Reageert op de bal, niet op een "
+    "ZONAL":   "**ZONAL (Zonedekking)** — bewaakt een vaste zone in of aan de re rand van strafschopgebied.."
+    " Reageert op de bal, niet op een "
                "specifieke aanvaller; blijft in zijn zone ongeacht wie er "
                "doorheen loopt. Het dekken van de eerste of tweede paal "
                "valt hier ook onder.",
@@ -134,12 +134,13 @@ DEF_ROLE_HELP = {
 }
 
 ATT_ROLE_HELP = {
-    "TARGET":      "**TARGET (Doelwit)** — de bedoelde ontvanger van "
-                    "de voorzet. Beweegt *naar* het punt waar de bal "
-                    "aankomt.",
-    "DECOY":       "**DECOY (Afleiding)** — trekt verdedigers *weg* van "
-                    "de bedoelde ontvanger. Zijn looplijn is bewust weg "
-                    "van het bal-aankomstpunt.",
+    "TARGET":      "**TARGET (Doelwit)** — beweegt *naar* het punt waar "
+                    "de bal aankomt. Spelers die richting de bal lopen "
+                    "vallen hieronder. Kunnen er meerdere zijn.",
+    "DECOY":       "**DECOY (Afleiding)** — beweegt *weg* van het punt "
+                    "waar de bal aankomt om verdedigers mee te trekken. "
+                    "Spelers die van de bal weg lopen vallen hieronder. "
+                    "Kunnen er meerdere zijn.",
     "SHORT":       "**SHORT (Korte corner)** — biedt zich kort aan bij "
                     "de cornernemer om een korte pass te ontvangen "
                     "(staat dicht bij de cornervlag, vaak buiten het "
