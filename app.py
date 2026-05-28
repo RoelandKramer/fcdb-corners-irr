@@ -120,7 +120,7 @@ DEF_ROLE_HELP = {
     "MAN":     "**MAN (Mandekker)** — volgt één specifieke aanvaller "
                "gedurende de hele corner. Blijft dicht bij hem en volgt "
                "zijn beweging totdat de bal arriveert.",
-    "ZONAL":   "**ZONAL (Zonedekking)** — bewaakt een vaste zone in of aan de re rand van strafschopgebied.."
+    "ZONAL":   "**ZONAL (Zonedekking)** — bewaakt een vaste zone in of aan de rand van het strafschopgebied."
     " Reageert op de bal, niet op een "
                "specifieke aanvaller; blijft in zijn zone ongeacht wie er "
                "doorheen loopt. Het dekken van de eerste of tweede paal "
