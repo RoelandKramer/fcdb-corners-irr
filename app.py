@@ -87,8 +87,8 @@ USER_ASSIGNMENTS = {
 # Rolcodes (Engels) — blijven Engels zodat de CSV-output bruikbaar blijft
 # voor de thesisanalyse. De zichtbare labels (zie *_LABELS_NL) zijn Nederlands.
 DEF_ROLES = ["", "MAN", "ZONAL", "SHORT", "COUNTER", "DON'T KNOW"]
-ATT_ROLES = ["", "TARGET", "DECOY", "STATIC", "STAY_BACK", "SECOND_BALL",
-             "BLOCK_GK", "DON'T KNOW"]
+ATT_ROLES = ["", "TARGET", "DECOY", "SHORT", "STATIC", "STAY_BACK",
+             "SECOND_BALL", "BLOCK_GK", "DON'T KNOW"]
 # Vervallen rollen die niet meer in de selectbox staan, maar bestaande
 # labels mogen ze nog hebben (worden geflagged zodat de rater corrigeert).
 DEPRECATED_ATT_ROLES = {"BLOCK_DEF"}
@@ -106,6 +106,7 @@ ATT_LABELS_NL = {
     "":             "— kies —",
     "TARGET":       "TARGET (doelwit)",
     "DECOY":        "DECOY (afleiding)",
+    "SHORT":        "SHORT (korte corner)",
     "STATIC":       "STATIC (statisch)",
     "STAY_BACK":    "STAY_BACK (blijft achter)",
     "SECOND_BALL":  "SECOND_BALL (tweede bal)",
@@ -138,6 +139,10 @@ ATT_ROLE_HELP = {
     "DECOY":       "**DECOY (Afleiding)** — trekt verdedigers *weg* van "
                     "de bedoelde ontvanger. Zijn looplijn is bewust weg "
                     "van het bal-aankomstpunt.",
+    "SHORT":       "**SHORT (Korte corner)** — biedt zich kort aan bij "
+                    "de cornernemer om een korte pass te ontvangen "
+                    "(staat dicht bij de cornervlag, vaak buiten het "
+                    "strafschopgebied).",
     "STATIC":      "**STATIC (Statisch)** — kiest geen looplijn. Blijft "
                     "ongeveer op dezelfde plek staan (vaak een vasthoud- "
                     "of ankerrol).",
